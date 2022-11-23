@@ -1,0 +1,68 @@
+---
+title: Syntax highlighting
+root: '/docs'
+parents: ['Get Started']
+---
+
+# Syntax highlighting
+
+```kt
+  @Composable
+  fun BottomSheet(modifier: Modifier) {
+    val context = LocalContext.current
+    Column(
+        modifier
+            .fillMaxWidth()
+            .fillMaxHeight()
+    ) {
+        Text(text = "Mandatory", style = LocalTypography.current.titleMedium)
+        Spacer(modifier = Modifier.height(20.dp))
+        ButtonWithSpacer20(buttonText = "Single Button") {
+            Navigator.showSheet(context, SheetMandatorySingleButton())
+        }
+        ButtonWithSpacer20(buttonText = "Two Button") {
+            Navigator.showSheet(context, SheetMandatoryTwoButton())
+        }
+        ButtonWithSpacer20(buttonText = "Text Only") {
+            Navigator.showSheet(context, SheetMandatoryTextOnly())
+        }
+        ButtonWithSpacer20(buttonText = "Confirmation Positive") {
+            Navigator.showSheet(context, SheetMandatoryConfirmationPositive())
+        }
+        ButtonWithSpacer20(buttonText = "With Nav Button") {
+            Navigator.showSheet(context, SheetMandatoryWithNavButton())
+        }
+        Text(
+            text = "Optional",
+            style = LocalTypography.current.titleMedium,
+            modifier = Modifier.padding(top = 20.dp)
+        )
+        Spacer(modifier = Modifier.height(20.dp))
+        ButtonWithSpacer20(buttonText = "Single Button") {
+            Navigator.showSheet(context, SheetOptionalSingleButton())
+        }
+        ButtonWithSpacer20(buttonText = "Two Button") {
+            Navigator.showSheet(context, SheetOptionalTwoButton())
+        }
+        ButtonWithSpacer20(buttonText = "Text Only Without Button") {
+            Navigator.showSheet(context, SheetOptionalTextOnlyWithoutButton())
+        }
+        ButtonWithSpacer20(buttonText = "Confirmation Negative") {
+            Navigator.showSheet(context, SheetOptionalConfirmationNegative())
+        }
+    }
+}
+```
+
+```xml
+<ImageView
+    android:id="@+id/ivIcon"
+    android:layout_width="16dp"
+    android:layout_height="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="10dp"
+    app:layout_constraintBottom_toBottomOf="@+id/tvLabel"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/tvLabel"
+    app:layout_constraintTop_toTopOf="@+id/tvLabel"/>
+```

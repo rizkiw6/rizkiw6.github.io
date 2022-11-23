@@ -1,0 +1,234 @@
+import { 
+    SampleInputFieldBox, 
+    SampleInputFieldNude, 
+    InputFieldBoxRegular, 
+    InputFieldBoxHelper, 
+    InputFieldBoxError,
+    InputFieldNudeRegular,
+    InputFieldNudeError,
+    InputFieldNudeHelper,
+    InputFieldNudePhone,
+    InputFieldNudeCurrency,
+    InputFieldNudePassword,
+    InputFieldNudeRegularIcon
+} from "/src/components/Images";
+
+
+# Input Field
+Input fields allow users to input information.
+
+## Type
+There are two types of input fields. `Nude` and `Box`
+### Nude
+A commonly used input field for form fields.
+
+<div><SampleInputFieldNude /></div>
+<br/><br/>
+
+#### Variants Input Nude
+We have a lot of variants for input nude and only have 2 sizes `regular` and `large`.
+to use `regular` size, we don't need to pass any attributes. Otherwise
+```xml
+<com.waresix.lib.ui.component.atom.InputFieldBoxAV
+    ...
+    app:isTypeLarge="true"
+    ... />
+```
+Next the code below will represent how to use any variants on input field.
+
+<br/>
+
+##### Nude Regular
+<br/>
+<div><InputFieldNudeRegular/></div>
+<br/>
+
+```xml
+<com.waresix.lib.ui.component.atom.InputFieldNudeAV
+    android:id="@+id/ifNude"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:ems="10"
+    android:inputType="text"
+    app:label="Label"
+    app:required="true" />
+```
+<br/>
+
+##### Nude Regular with Icon
+<br/>
+<div><InputFieldNudeRegularIcon/></div>
+<br/>
+
+```xml
+<com.waresix.lib.ui.component.atom.InputFieldNudeAV
+    android:id="@+id/ifNude"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:ems="10"
+    android:inputType="text"
+    app:iconEndDrawable="@drawable/ic_arrow_down"
+    app:label="Label"
+    app:required="true" />
+```
+<br/>
+
+##### Nude with Helper Text
+<br/>
+<div><InputFieldNudeHelper/></div>
+<br/>
+
+```xml
+<com.waresix.lib.ui.component.atom.InputFieldNudeAV
+    android:id="@+id/ifNude"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:ems="10"
+    android:inputType="text"
+    app:message="helper text here" />
+```
+<br/>
+
+##### Nude Error
+<br/>
+<div><InputFieldNudeError/></div>
+<br/>
+
+To set error message, we don't set it on xml but set it on kotlin by using
+
+```kotlin
+ifNude.showError("error message here")
+```
+<br/>
+
+##### Nude Phone
+<br/>
+<div><InputFieldNudePhone/></div>
+<br/>
+
+```xml
+<com.waresix.lib.ui.component.atom.InputFieldNudeAV
+    android:id="@+id/ifNude"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:inputType="phone" />
+```
+<br/>
+
+##### Nude Currency
+<br/>
+<div><InputFieldNudeCurrency/></div>
+<br/>
+
+```xml
+<com.waresix.lib.ui.component.atom.InputFieldNudeAV
+    android:id="@+id/ifNude"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:digitDecimal="2"
+    app:hint="0,00"
+    app:isCurrency="true" />
+```
+<br/>
+
+##### Nude Password
+<br/>
+<div><InputFieldNudePassword/></div>
+<br/>
+
+```xml
+<com.waresix.lib.ui.component.atom.InputFieldNudeAV
+    android:id="@+id/ifNude"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ems="10"
+    android:inputType="textPassword"
+    app:hint="Placeholder Text"
+    app:isSecureText="true" />
+```
+<br/>
+<div style={{width: '100%', height: 1, backgroundColor: '#F4F6F8'}}/>
+<br/>
+
+### Box
+An alternative input field that can be used for input that requires highlighting.
+
+<div><SampleInputFieldBox /></div>
+<br/><br/>
+
+#### Variants Input Box
+We have a lot of variants for input box and only have 3 sizes `regular`, `small` and `large`.
+
+to use `regular` size, we don't need to pass any attributes. Otherwise
+```xml
+<com.waresix.lib.ui.component.atom.InputFieldBoxAV
+    ...
+    app:inputFieldBoxType="small|large"
+    ... />
+```
+
+Next the code below will represent how to use any variants on input field.
+
+##### Box Regular
+
+<div><InputFieldBoxRegular/></div>
+<br/>
+
+```xml
+<com.waresix.lib.ui.component.atom.InputFieldBoxAV
+    android:id="@+id/ifBox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:ems="10"
+    android:inputType="text" />
+```
+<br/>
+
+##### Box with Helper Text
+
+<div><InputFieldBoxHelper/></div>
+<br/>
+
+```xml
+<com.waresix.lib.ui.component.atom.InputFieldBoxAV
+    android:id="@+id/ifBox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:ems="10"
+    android:inputType="text"
+    app:message="helper text here" />
+```
+<br/>
+
+##### Box Error
+
+<div><InputFieldBoxError/></div>
+<br/>
+
+To set error message, we don't set it on xml but set it on kotlin by using
+```kotlin
+inputField.showError("Error Message Here")
+```
+<br/>
+
+##### Box with Icon
+
+<div><SampleInputFieldBox /></div>
+<br/><br/>
+
+```xml
+<com.waresix.lib.ui.component.atom.InputFieldBoxAV
+    android:id="@+id/ifBox"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:ems="10"
+    android:inputType="text"
+    app:iconStartDrawable="@drawable/{your_drawable}" />
+```
