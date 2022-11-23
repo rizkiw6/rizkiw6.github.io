@@ -5,43 +5,21 @@ import { GithubOutlined, TwitterOutlined } from '@ant-design/icons'
 
 const IndexPage = () => {
   return (
-    <div align="center" style={{ padding: 80 }}>
+    <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
       <p
         style={{
-          color: 'cornflowerblue',
+          color: '#03222F',
           fontSize: 50,
           fontWeight: 'bold',
+          marginBottom: 0,
         }}
       >
-        Gatsby Ant Design Docs Boilerplate
+        Waresix Android UI Component
       </p>
-      <h2>A gatsby starter to create documentation websites</h2>
-      <p>
-        This is a fork of{' '}
-        <a href="https://github.com/cvluca/gatsby-starter-markdown">
-          https://github.com/cvluca/gatsby-starter-markdown
-        </a>
-      </p>
+      <h2>A component library which android dev can use.</h2>
       <br />
       <Button.Group size="large">
-        <Button
-          size="large"
-          icon={<TwitterOutlined />}
-          href="https://twitter.com/jannikbuschke"
-          target="_blank"
-        >
-          Twitter
-        </Button>
-        <Button
-          size="large"
-          icon={<GithubOutlined />}
-          href="https://github.com/jannikbuschke/gatsby-antd-docs"
-          target="_blank"
-        >
-          Github
-        </Button>
-
-        <Button type="primary" size="large">
+        <Button ghost type="primary" size="large">
           <Link to="/docs/template/get-started/introduction">Get Started</Link>
         </Button>
       </Button.Group>
