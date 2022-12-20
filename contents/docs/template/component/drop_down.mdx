@@ -1,0 +1,54 @@
+import { DropDownImage } from "/src/components/Images";
+
+
+# Drop Down
+Toggles allow user to turn an option on or off.
+
+<div style={{backgroundColor: 'white', borderRadius: 16, padding: 32, marginBottom: 24}}>
+   <DropDownImage />
+</div>
+
+```xml
+<com.waresix.lib.ui.component.molecule.DropDownMV
+	android:id="@+id/ddTest"
+	app:drop_down_hint="Pilih kategori"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content" />
+```
+
+fill the dropdown data item
+```kotlin
+val list = ArrayList<String>()
+for (i in 0..4) {
+	list.add("isi ke ${i + 1}")
+}
+val adapter = ArrayAdapter(
+	context,
+	R.layout.item_dropdown,
+	list
+)
+ddTest.adapter = adapter
+```
+
+here is the sample of the layout item : 
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@android:id/text1"
+    style="@style/Text.Body.Medium"
+    android:textColor="@color/grey70"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="13dp"
+    android:paddingBottom="16dp"
+    android:paddingHorizontal="24dp"/>
+```
+
+to add action on item clicked, you can add code below
+```kotlin
+ddTest.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
+	// TODO: your code here
+}
+```

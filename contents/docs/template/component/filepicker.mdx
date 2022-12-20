@@ -1,0 +1,99 @@
+import { FilePickerImage } from "/src/components/Images";
+
+
+# File Picker
+Toggles allow user to turn an option on or off.
+
+<div style={{backgroundColor: 'white', borderRadius: 16, padding: 32, marginBottom: 24}}>
+   <FilePickerImage />
+</div>
+
+```xml
+<GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="3"
+    android:rowCount="2"
+    android:useDefaultMargins="true">
+
+    <com.waresix.lib.ui.component.molecule.FilePickerMV
+        android:id="@+id/fpEmpty"
+        android:layout_width="0dp"
+        android:layout_height="128dp"
+        android:layout_columnWeight="1" />
+
+    <com.waresix.lib.ui.component.molecule.FilePickerMV
+        android:id="@+id/fpUploadedPdf"
+        android:layout_width="0dp"
+        android:layout_height="128dp"
+        android:layout_columnWeight="1" />
+
+    <com.waresix.lib.ui.component.molecule.FilePickerMV
+        android:id="@+id/fpUploadedZip"
+        android:layout_width="0dp"
+        android:layout_height="128dp"
+        android:layout_columnWeight="1" />
+
+    <com.waresix.lib.ui.component.molecule.FilePickerMV
+        android:id="@+id/fpUploadedImg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1" />
+
+    <com.waresix.lib.ui.component.molecule.FilePickerMV
+        android:id="@+id/fpViewUploadedPdf"
+        android:layout_width="0dp"
+        android:layout_height="128dp"
+        android:layout_columnWeight="1"
+        app:isViewOnly="true" />
+
+    <com.waresix.lib.ui.component.molecule.FilePickerMV
+        android:id="@+id/fpViewUploadedZip"
+        android:layout_width="0dp"
+        android:layout_height="128dp"
+        android:layout_columnWeight="1"
+        app:isViewOnly="true" />
+
+    <com.waresix.lib.ui.component.molecule.FilePickerMV
+        android:id="@+id/fpViewUploadedImg"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        app:isViewOnly="true" />
+
+</GridLayout>
+```
+`app:isViewOnly="true"` is used for remove delete button on the top right of view.
+
+you can set thumbnail by extension (currently only support pdf and zip) by using code below
+
+```kotlin
+fpViewUploadedPdf.fileExtension = "pdf"
+fpViewUploadedZip.fileExtension = "zip"
+```
+
+or you can set thumbnail using image from internet using glide, you just need to set file url like below
+
+```kotlin
+fpUploadedImg.fileUrl = "https://dummyimage.com/150.png/ccc/000"
+fpViewUploadedImg.fileUrl = "https://dummyimage.com/150.png/ccc/000"
+```
+
+Then you can set action on delete icon is clicked
+```kotlin
+fpUploadedPdf.onClickRemove { 
+    //TODO: YOUR ACTION HERE TO DELETE THE IMAGE 
+}
+```
+also can set action on file clicked if the file is not empty
+```kotlin
+fpUploadedPdf.onClickFile { 
+    //TODO: YOUR ACTION HERE TO VIEW THE IMAGE 
+}
+```
+and last you can also set action on file clicked if the file is empty (to add image or file)
+```kotlin
+fpUploadedPdf.onClickAdd { 
+    //TODO: YOUR ACTION HERE TO ADD FILE 
+}
+```

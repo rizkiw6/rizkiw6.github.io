@@ -1,0 +1,102 @@
+import { DateTimePickerSheetImage, DateWithTimeImage, DateSingleImage, DateRangeImage } from "/src/components/Images";
+
+
+# Date Time Picker Sheet
+Toggles allow user to turn an option on or off.
+
+<div style={{backgroundColor: 'white',border: '1px solid #F4F6F8', borderRadius: 16, padding: 32, marginBottom: 24}}>
+   <DateTimePickerSheetImage />
+</div>
+
+Sample using DateTimePickerSheet with State
+```kotlin
+import com.waresix.lib.ui.component.sheet.datetimepicker.DateTimePickerSheet
+
+...
+
+data class State(
+	@Saved val assigmentDate: Pair<Date, Date>? = null,
+) : UiState
+
+...
+
+DateTimePickerSheet
+	.dateRangePicker()
+	.title("Your title here")
+	.calendarType(CalendarType.VIEW_ONLY | CalendarType.SINGLE_DATE_PICKER | CalendarType.RANGE_DATE_PICKER)
+	.isShowTimePicker(true | false)
+	.isShowResetButton(isShow)
+	.minimumDate(Date())
+	.maxRangeSelection(1, DateUnit.DAY | DateUnit.WEEK | DateUnit.MONTH | DateUnit.YEAR)
+	.selectedDate(state.assigmentDate?.first)
+	.selectedEndDate(state.assigmentDate?.second)
+	.onPositiveButtonClicked { startDate, endDate ->
+		// your logic here on 'Simpan' button clicked
+	}
+	.minimumDate(Date())
+	.maximumDate(Date())
+	.show(context)
+
+...
+```
+
+## Date Range Picker
+
+<div style={{backgroundColor: 'white', borderRadius: 16, padding: 32, marginBottom: 24}}>
+   <DateRangeImage />
+</div>
+
+```kotlin
+var rangeDate: Pair<Date?, Date?>? = null
+DateTimePickerSheet
+	.dateRangePicker()
+	.title("Pilih Rentang Tanggal")
+	.selectedDate(rangeDate?.first)
+	.selectedEndDate(rangeDate?.second)
+	.maxRangeSelection(3, DateUnit.MONTH)
+	.onPositiveButtonClicked { startDate, endDate ->
+		rangeDate = Pair(startDate, endDate)
+		// TODO: your code here
+	}
+	.show(it.context)
+```
+<br/><br/>
+
+## Date Time Picker
+
+<div style={{backgroundColor: 'white', borderRadius: 16, padding: 32, marginBottom: 24}}>
+   <DateWithTimeImage />
+</div>
+
+```kotlin
+var dateTime: Date = Date()
+DateTimePickerSheet
+	.dateTimePicker()
+	.title("Pilih Tanggal & Waktu")
+	.selectedDate(dateTime)
+	.maximumDate(Date())
+	.onPositiveButtonClicked { date, _ ->
+		// TODO: Your code here
+	}
+	.show(it.context)
+```
+<br/><br/>
+
+## Single Date Picker
+
+<div style={{backgroundColor: 'white', borderRadius: 16, padding: 32, marginBottom: 24}}>
+   <DateSingleImage />
+</div>
+
+```kotlin
+var singleDate: Date = Date()
+DateTimePickerSheet
+	.datePicker()
+	.title("Pilih Tanggal")
+	.selectedDate(singleDate)
+	.onPositiveButtonClicked { date, _ ->
+		singleDate = date
+		// TODO: Your code here
+	}
+	.show(it.context)
+```

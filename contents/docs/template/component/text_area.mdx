@@ -1,0 +1,25 @@
+import { 
+    TextAreaImage
+} from "/src/components/Images";
+
+
+# TextArea
+Input fields allow users to input information.
+
+<div style={{display: 'flex', alignItems:'center',justifyContent: 'space-evenly', border: '1px solid #F4F6F8', borderRadius: 16, padding: 32, marginBottom: 24}}>
+    <TextAreaImage />
+</div>
+
+```xml
+<com.waresix.lib.ui.component.atom.TextAreaAV
+    android:id="@+id/textArea"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:maxLength="140" />
+```
+
+to set error message
+
+```kotlin
+textArea.setErrorMessage("Error message here")
+```

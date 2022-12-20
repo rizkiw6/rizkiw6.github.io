@@ -1,0 +1,50 @@
+import { SectionCloseImage } from "/src/components/Images";
+
+
+# Section Message
+Toggles allow user to turn an option on or off.
+
+<div style={{backgroundColor: 'white', borderRadius: 16, padding: 32, marginBottom: 24}}>
+   <SectionCloseImage />
+</div>
+
+```xml
+<com.waresix.lib.ui.component.molecule.SectionMessageAV
+    android:id="@+id/sm1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="This is example section info general"
+    app:sectionMessageVariant="general" />
+
+<com.waresix.lib.ui.component.molecule.SectionMessageAV
+    android:id="@+id/sm2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="This is example section info error or danger"
+    app:sectionMessageVariant="error" />
+
+<com.waresix.lib.ui.component.molecule.SectionMessageAV
+    android:id="@+id/sm3"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="This is example section info warning"
+    app:sectionMessageVariant="warning" />
+
+<com.waresix.lib.ui.component.molecule.SectionMessageAV
+    android:id="@+id/sm4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="This is example section info positive"
+    app:sectionMessageVariant="positive" />
+```
+
+to make the section message dismissable with close icon just add attribute `app:dismissable="true"`. e.g 
+```xml
+<com.waresix.lib.ui.component.molecule.SectionMessageAV
+    android:id="@+id/sm4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="This is example section info positive"
+    app:dismissable="true"
+    app:sectionMessageVariant="positive" />
+```

@@ -1,0 +1,39 @@
+import { EmptyLayoutImage } from "/src/components/Images";
+
+
+# Empty Layout MV
+Toggles allow user to turn an option on or off.
+
+<div style={{backgroundColor: 'white', borderRadius: 16, padding: 32, marginBottom: 24}}>
+   <EmptyLayoutImage />
+</div>
+
+```xml
+<com.waresix.lib.ui.component.molecule.EmptyLayoutMV
+	android:id="@+id/emptyLayout"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"/>
+```
+
+```kotlin
+with(binding.emptyLayout) {
+	imageDrawable =
+		if (keyword.isNullOrEmpty()) R.drawable.img_data_not_found
+		else R.drawable.ic_no_data_goods_found
+	title = string(
+		if (keyword.isNullOrEmpty()) R.string.text_no_history
+		else R.string.text_no_data_found
+	)
+	subtitle = string(
+		if (keyword.isNullOrEmpty()) R.string.text_no_history_detail
+		else R.string.text_no_data_found_detail
+	)
+}
+```
+
+to add action on button reload, you can add this code below
+```kotlin
+binding.emptyLayout.onBtnClickListener = {
+	// TODO: Your action here
+}
+```

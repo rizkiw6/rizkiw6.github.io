@@ -21,12 +21,17 @@
         "link": "/docs/template/component/elevate_view"
       },
       { "name": "Input Field", "link": "/docs/template/component/input_field" },
-      { "name": "Text Area", "link": "/docs/template/guide/sidebar" },
+      { "name": "Text Area", "link": "/docs/template/component/text_area" },
       { "name": "Label", "link": "/docs/template/component/label" },
       { "name": "OTP View", "link": "/docs/template/component/otp_view" },
       { "name": "Pill View", "link": "/docs/template/component/pills" },
       { "name": "Radio Button", "link": "/docs/template/component/radio_button" },
-      { "name": "Toggle View", "link": "/docs/template/component/toggle" }
+      { "name": "Toggle View", "link": "/docs/template/component/toggle" },
+      { "name": "Date Time Picker", "link": "/docs/template/component/datetimepickersheet" },
+      { "name": "Empty Layout", "link": "/docs/template/component/empty_layout" },
+      { "name": "Drop Down", "link": "/docs/template/component/drop_down" },
+      { "name": "Section Message", "link": "/docs/template/component/section_message" },
+      { "name": "File Picker View", "link": "/docs/template/component/filepicker" }
     ]
   }
 ]
